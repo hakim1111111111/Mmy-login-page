@@ -1,42 +1,66 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Page</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 40px; background: #f4f4f4; }
-    .login-box { max-width: 400px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    input[type="text"], input[type="submit"] {
-      width: 100%; padding: 10px; margin: 10px 0;
-      border: 1px solid #ccc; border-radius: 5px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .error { color: red; font-weight: bold; text-align: center; display: none; }
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+    }
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
   </style>
 </head>
 <body>
+
   <div class="login-box">
-    <h2 style="text-align: center;">Admin Login</h2>
-    <form id="loginForm">
-      <label for="user_id">User Name ID:</label>
-      <input type="text" id="user_id" name="user_id" placeholder="Enter your username" autofocus required />
-      <input type="submit" value="Log In" />
-      <p class="error" id="errorMsg">Access Denied: Invalid user name ID.</p>
-    </form>
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter your username" />
+    <br />
+    <button onclick="login()">Log In</button>
+    <p class="message" id="message"></p>
   </div>
 
- <script>
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const userId = document.getElementById("user_id").value.trim().toLowerCase();
-    if (userId === "rachid") {
-      window.location.href = "https://yourusername.github.io/your-repo-name/home.html";
-  <!-- This is what you'll replace -->
-    } else {
-      document.getElementById("errorMsg").style.display = "block";
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim().toLowerCase();
+      const message = document.getElementById('message');
+
+      if (username === "rachid") {
+        message.innerHTML = "✅ Welcome Meryem, this person loves you ❤️";
+      } else {
+        message.innerHTML = "❌ Invalid username. Access denied.";
+      }
     }
-  });
-</script>
+  </script>
 
 </body>
 </html>
