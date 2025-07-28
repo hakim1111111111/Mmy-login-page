@@ -25,18 +25,18 @@
     </form>
   </div>
 
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form from submitting
-      const userId = document.getElementById("user_id").value.trim().toLowerCase();
-      if (userId === "roony") {
-        // Access granted - redirect to secure page (example: dashboard.html)
-        https://github.com/hakim1111111111/Mmy-login-page.git // Change this to your desired destination
-      } else {
-        // Show error message
-        document.getElementById("errorMsg").style.display = "block";
-      }
-    });
-  </script>
+ <script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const userId = document.getElementById("user_id").value.trim().toLowerCase();
+    if (userId === "rachid") {
+      window.location.href = "https://yourusername.github.io/your-repo-name/home.html";
+  <!-- This is what you'll replace -->
+    } else {
+      document.getElementById("errorMsg").style.display = "block";
+    }
+  });
+</script>
+
 </body>
 </html>
